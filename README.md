@@ -4,11 +4,11 @@ This project is an attempt to fulfill last requirement to achieve that certifica
 
 ### Prerequisites
 
-Visual Studio 2015 CE should be fine
+Visual Studio 2015 CE should be fine.
 
 ### Installing
 
-Open solution, build it, and run
+Open solution, build it, and run.
 
 ## Description of fuctionalities/traits 
 * WPF application (buttons, some text fields)
@@ -20,7 +20,7 @@ Open solution, build it, and run
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Versioning
 
