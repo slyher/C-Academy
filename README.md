@@ -39,3 +39,4 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * [Design patterns](http://www.dofactory.com/net/design-patterns)
 * [Strategy design pattern](https://www.youtube.com/watch?v=b4ssMlADWTM)
 * [channel 9 WPF](https://channel9.msdn.com/Tags/wpf)
+* [readme template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
