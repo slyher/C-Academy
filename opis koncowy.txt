@@ -1,0 +1,6 @@
+* WPF application (buttons, some text fields)
+* enums, dictionaries, overiding toString()
+* Shuffling algoritms - at least one
+* Sorting hand by suite and value
+* Counting HCP points for each hand
+* Predicting opening bid for one player
