@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfCAcademy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCAcademy"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Button x:Name="shuffle" Content="Shuffle" HorizontalAlignment="Left" Height="29" Margin="113,10,0,0" VerticalAlignment="Top" Width="294" Click="shuffle_Click"/>
+        <TextBlock x:Name="northText" HorizontalAlignment="Left" Height="70" Margin="175,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="167"/>
+        <TextBlock x:Name="westText" HorizontalAlignment="Left" Height="84" Margin="20,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="129"/>
+        <TextBlock x:Name="southText" HorizontalAlignment="Left" Height="71" Margin="158,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <TextBlock x:Name="eastText" HorizontalAlignment="Left" Height="102" Margin="347,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="161"/>
+
+    </Grid>
+</Window>
