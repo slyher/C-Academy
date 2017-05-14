@@ -13,7 +13,6 @@ namespace WpfCAcademy.Model.cards
         public void addCard(card Card)
         {
             Deck.Insert(Deck.Count, Card);
-            return;
         }
 
         public void createDefaultDeck()
@@ -44,30 +43,36 @@ namespace WpfCAcademy.Model.cards
             var shuffleinnerCounter = r.Next(deckCount);
             for (int i = 0; i < shuffleinnerCounter; i++)
             {
-                var halfADeck = Deck.Count / 2;
+                var cardSwitchCounter = 0;
                 do
                 {
                     for (int j = 0; j < r.Next(deckCount/10); j++)
                     {
-
+                        cardSwitchCounter++;
+                        int k = r.Next(deckCount);
+                        switchCards(ref Deck, j, k);
                     }
-                } while (Deck.Count>0);
+                } while (2 * Deck.Count> cardSwitchCounter);
                 Deck = newDeck;
             }
             return newDeck;
         }
+        private void switchCards(ref List<card> deck, int cartIndexFrom, int cardIndexTo)
+        {
+            int deckCount = deck.Count;
+            card tempn = Deck.ElementAt(cartIndexFrom);
+            Deck.RemoveAt(cartIndexFrom);
+            card tempk = Deck.ElementAt(cardIndexTo);
+            Deck.RemoveAt(cardIndexTo);
+            Deck.Insert(deckCount - 2, tempk);
+            Deck.Insert(deckCount - 1, tempn);
+        }
         public List<card> shuffle()
         {
-            var deckCount = Deck.Count;
             for (int n = Deck.Count - 1; n > 0; --n)
             {
                 int k = r.Next(n + 1);
-                card tempn = Deck.ElementAt(n);
-                Deck.RemoveAt(n);
-                card tempk = Deck.ElementAt(k);
-                Deck.RemoveAt(k);
-                Deck.Insert(deckCount - 2, tempk);
-                Deck.Insert(deckCount - 1, tempn);
+                switchCards(ref Deck, n, k);
             }
             return Deck;
         }
