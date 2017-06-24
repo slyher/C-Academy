@@ -5,7 +5,7 @@ using System.Text;
 
 namespace WpfCAcademy.Model.cards
 {
-    class cards : iCards
+    public class cards : iCards
     {
         enum special : Byte { none = 0, joker }
         static Random r = new Random();

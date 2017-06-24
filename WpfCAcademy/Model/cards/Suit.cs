@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WpfCAcademy.Model.cards
 {
-    class Suit : IComparable<Suit>
+    public class Suit : IComparable<Suit>
     {
         enum siuts : Int32 { club = 1, diamond, heart, spade }
         protected char suit { get; set; }
