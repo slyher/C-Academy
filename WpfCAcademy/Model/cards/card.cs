@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace WpfCAcademy.Model.cards
 {
-    class card : IComparable<card>
+    public class card : IComparable<card>
     {
-        public card(Suit suit, Mark mark, bool Special)
+        public card(Suit Suit, Mark Mark, bool Special)
         {
-            this.mark = mark;
-            this.suite = suit;
+            this.mark = Mark;
+            this.suite = Suit;
             this.isSpecial = Special;
 
         }
