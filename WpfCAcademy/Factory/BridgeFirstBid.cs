@@ -11,7 +11,7 @@ namespace WpfCAcademy.Factory
     {
         public static string PredictFirstBid(BridgeHand Hand)
         {
-            return "";
+            return "pass";
         }
     }
 }
