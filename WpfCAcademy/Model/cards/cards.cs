@@ -57,11 +57,11 @@ namespace WpfCAcademy.Model.cards
             }
             return newDeck;
         }
-        private void switchCards(ref List<card> deck, int cartIndexFrom, int cardIndexTo)
+        private void switchCards(ref List<card> deck, int cardIndexFrom, int cardIndexTo)
         {
             int deckCount = deck.Count;
-            card tempn = Deck.ElementAt(cartIndexFrom);
-            Deck.RemoveAt(cartIndexFrom);
+            card tempn = Deck.ElementAt(cardIndexFrom);
+            Deck.RemoveAt(cardIndexFrom);
             card tempk = Deck.ElementAt(cardIndexTo);
             Deck.RemoveAt(cardIndexTo);
             Deck.Insert(deckCount - 2, tempk);

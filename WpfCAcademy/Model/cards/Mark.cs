@@ -8,7 +8,6 @@ namespace WpfCAcademy.Model.cards
 {
     public class Mark : IComparable<Mark>
     {
-        enum mark : Int32 { two = 2, thre, four, five, six, seven, eight, nine, ten, jack, quen, king, ace, JOKER}
         private Int32 value { get; set; }
         private string display { get; set; }
 
