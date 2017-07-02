@@ -9,7 +9,7 @@ namespace WpfCAcademy.Model.BridgeDeck
 {
     public class BridgeHand : cards.cards
     {
-        enum ValuedCardValues : int { J=1, Q, K, A };
+        enum ValuedCardValues : int { J = 1, Q, K, A };
         public List<card> Hand = new List<card>();
         public BridgeHand(List<card> Hand)
         {
@@ -29,8 +29,17 @@ namespace WpfCAcademy.Model.BridgeDeck
                     }
                 }
             }
-            throw new NotImplementedException();
-            return 42;
+            return Points;
         }
+
+        public int GetLengthOfLongestSuite()
+        {
+            return 0;
+        }
+        public Suit GetSuitOfLongestSuite()
+        {
+            return new Suit();
+        }
+
     }
 }

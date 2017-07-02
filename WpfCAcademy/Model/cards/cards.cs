@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WpfCAcademy.Factory;
 
 namespace WpfCAcademy.Model.cards
 {
@@ -20,12 +21,13 @@ namespace WpfCAcademy.Model.cards
             Boolean special = new bool();
             special = false;
             char[] suits = { '\u2660', '\u2665', '\u2666', '\u2663' }; //Spades,  Hearts, Diamonds, Clubs
+            string[] suitsMap = { "Spade", "Heart", "Diamond", "Club" };
             string[] values = { "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" };
             for (int i = 0; i < suits.Length; i++)
             {
                 for (int j = 0; j < values.Length; j++)
                 {
-                    addCard(new card(new Suit(suits[i], 15 * (i + 1)), new Mark(values[j], j + 1), special));
+                    addCard(new card(SuiteFactory.NewSuite(suits[i], 15 * (i + 1), suitsMap[i]), new Mark(values[j], j + 1), special));
                 }
 
             }
@@ -46,13 +48,13 @@ namespace WpfCAcademy.Model.cards
                 var cardSwitchCounter = 0;
                 do
                 {
-                    for (int j = 0; j < r.Next(deckCount/10); j++)
+                    for (int j = 0; j < r.Next(deckCount / 10); j++)
                     {
                         cardSwitchCounter++;
                         int k = r.Next(deckCount);
                         switchCards(ref Deck, j, k);
                     }
-                } while (2 * Deck.Count> cardSwitchCounter);
+                } while (2 * Deck.Count > cardSwitchCounter);
                 Deck = newDeck;
             }
             return newDeck;
