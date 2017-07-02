@@ -17,8 +17,8 @@ namespace WpfCAcademy.Model.cards
         }
 
         public Suit suite { get; set; }
-        private Mark mark { get; set; }
-        private bool isSpecial { get; set; }
+        public Mark mark { get; set; }
+        public bool isSpecial { get; set; }
 
         public int CompareTo(card other)
         {

@@ -8,18 +8,27 @@ namespace WpfCAcademy.Model.cards
 {
     public class Suit : IComparable<Suit>
     {
-        enum siuts : Int32 { club = 1, diamond, heart, spade }
+        public string CommonName { get; set; }
         protected char suit { get; set; }
         public Int32 value { get; set; }
 
-        public Suit() {
+        public Suit()
+        {
             suit = ' ';
             value = 0;
+            CommonName = "0";
         }
-        public Suit(char suit, Int32 value)
+        public Suit(char suit, int value)
         {
             this.suit = suit;
             this.value = value;
+            CommonName = value.ToString();
+        }
+        public Suit(char suit, int value, string CommonName)
+        {
+            this.suit = suit;
+            this.value = value;
+            this.CommonName = CommonName;
         }
         public int CompareTo(Suit other)
         {
@@ -28,7 +37,7 @@ namespace WpfCAcademy.Model.cards
         }
         public override string ToString()
         {
-            return this.suit.ToString();
+            return suit.ToString();
         }
     }
 }

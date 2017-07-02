@@ -63,12 +63,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Factory\BridgeFirstBid.cs" />
+    <Compile Include="Factory\SuiteFactory.cs" />
+    <Compile Include="Factory\StrongPassFirstBid.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\BridgeDeck\BridgeDeck.cs" />
+    <Compile Include="Model\BridgeDeck\BridgeHand.cs" />
     <Compile Include="Model\cards\card.cs" />
     <Compile Include="Model\cards\cards.cs" />
     <Compile Include="Model\cards\Mark.cs" />
