@@ -45,7 +45,6 @@ namespace WpfCAcademy
         private void advanceShuffle_Checked(object sender, RoutedEventArgs e)
         {
             this.EnableAdvancedShuffle = !this.EnableAdvancedShuffle;
-            Console.WriteLine(this.EnableAdvancedShuffle);
         }
     }
 }
