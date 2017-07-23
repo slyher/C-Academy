@@ -13,6 +13,7 @@ namespace WpfCAcademy
     public partial class MainWindow : Window
     {
         cards Deck;
+        Boolean EnableAdvancedShuffle = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,6 +35,10 @@ namespace WpfCAcademy
             eastText.Text  = this.Deck.ConverToString(data.ElementAt(3).Value);
         }
 
-        
+        private void advanceShuffle_Checked(object sender, RoutedEventArgs e)
+        {
+            this.EnableAdvancedShuffle = !this.EnableAdvancedShuffle;
+            Console.WriteLine(this.EnableAdvancedShuffle);
+        }
     }
 }
