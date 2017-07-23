@@ -13,6 +13,7 @@ namespace WpfCAcademy
     public partial class MainWindow : Window
     {
         cards Deck;
+        Boolean EnableAdvancedShuffle = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -26,7 +27,14 @@ namespace WpfCAcademy
             Dictionary<int, List<card>> data = new Dictionary<int, List<card>>();
             Deck.Clear();
             this.Deck.createDefaultDeck();
-            this.Deck.shuffle();
+            if (this.EnableAdvancedShuffle)
+            {
+                this.Deck.shuffleAlternative();
+            }
+            else
+            {
+                this.Deck.shuffle();
+            }
             data = this.Deck.deal(players, cardsPerPlayer);
             southText.Text = this.Deck.ConverToString(data.ElementAt(0).Value);
             westText.Text  = this.Deck.ConverToString(data.ElementAt(1).Value);
@@ -34,6 +42,9 @@ namespace WpfCAcademy
             eastText.Text  = this.Deck.ConverToString(data.ElementAt(3).Value);
         }
 
-        
+        private void advanceShuffle_Checked(object sender, RoutedEventArgs e)
+        {
+            this.EnableAdvancedShuffle = !this.EnableAdvancedShuffle;
+        }
     }
 }
