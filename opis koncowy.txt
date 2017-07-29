@@ -3,4 +3,4 @@
 * Shuffling algoritms - at least one
 * Sorting hand by suite and value
 * Counting HCP points for each hand
-* Predicting opening bid for one player
+* Predicting opening bid for one player Strong pass convencion

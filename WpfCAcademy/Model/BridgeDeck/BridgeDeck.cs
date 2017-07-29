@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfCAcademy.Factory;
 using WpfCAcademy.Model.cards;
 
 namespace WpfCAcademy.Model.BridgeDeck
@@ -21,7 +22,9 @@ namespace WpfCAcademy.Model.BridgeDeck
 
         public string ConverToString(BridgeHand Hand)
         {
-            return base.ConverToString(Hand.Hand);
+            return base.ConverToString(Hand.Hand) + 
+                "\nHCP: " + Hand.CountHandPoints() + 
+                "\nFirstbid: "  + BridgeFirstBid.PredictFirstBid(Hand, BridgeFirstBid.Conventions.StrongPass);
         }
         internal new void Clear()
         {
