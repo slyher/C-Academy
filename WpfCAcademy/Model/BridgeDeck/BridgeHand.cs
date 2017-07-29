@@ -19,13 +19,13 @@ namespace WpfCAcademy.Model.BridgeDeck
         public int CountHandPoints()
         {
             var Points = 0;
-            foreach (var Card in this.Hand)
+            foreach (var Card in Hand)
             {
-                foreach (var MarkPoint in Enum.GetNames(typeof(Mark)).ToList<string>())
+                foreach (var MarkPoint in Enum.GetNames(typeof(ValuedCardValues)))
                 {
-                    if (MarkPoint.ToString().Equals(Card.mark))
+                    if (MarkPoint.ToString().Equals(Card.mark.ToString()))
                     {
-                        Points += (int)Enum.Parse(typeof(Mark), Card.mark.ToString());
+                        Points += (int)Enum.Parse(typeof(ValuedCardValues), Card.mark.ToString());
                     }
                 }
             }
@@ -34,11 +34,24 @@ namespace WpfCAcademy.Model.BridgeDeck
 
         public int GetLengthOfLongestSuite()
         {
-            return 0;
+            Dictionary<Suit, int> Length = new Dictionary<Suit, int>();
+            foreach (var Card in Hand)
+            {
+                if (Length.ContainsKey(Card.suite))
+                {
+                    Length[Card.suite]++;
+                }
+                else
+                {
+                    Length.Add(Card.suite, 1);
+                }
+            }
+            return Length.Values.Max();
         }
         public Suit GetSuitOfLongestSuite()
         {
-            return new Suit();
+            // return new Suit();
+            throw new NotImplementedException();
         }
 
     }

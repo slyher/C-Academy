@@ -25,7 +25,6 @@ namespace WpfCAcademy
         {
             var players = 4;
             var cardsPerPlayer = 13;
-            //Dictionary<int, List<card>> data = new Dictionary<int, List<card>>();
             Deck.Clear();
             Deck.createDefaultDeck();
             if (EnableAdvancedShuffle)
@@ -37,10 +36,10 @@ namespace WpfCAcademy
                 Deck.shuffle();
             }
             Deck.AddHands(Deck.deal(players, cardsPerPlayer));
-            southText.Text = Deck.ConverToString(Deck.Hands.ElementAt(0).Hand);
-            westText.Text  = Deck.ConverToString(Deck.Hands.ElementAt(1).Hand);
-            northText.Text = Deck.ConverToString(Deck.Hands.ElementAt(2).Hand);
-            eastText.Text  = Deck.ConverToString(Deck.Hands.ElementAt(3).Hand);
+            southText.Text = Deck.ConverToString(Deck.Hands.ElementAt(0));
+            westText.Text  = Deck.ConverToString(Deck.Hands.ElementAt(1));
+            northText.Text = Deck.ConverToString(Deck.Hands.ElementAt(2));
+            eastText.Text  = Deck.ConverToString(Deck.Hands.ElementAt(3));
         }
 
         private void advanceShuffle_Checked(object sender, RoutedEventArgs e)
