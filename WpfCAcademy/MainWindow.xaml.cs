@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
+using WpfCAcademy.Model.BridgeDeck;
 using WpfCAcademy.Model.cards;
 
 namespace WpfCAcademy
@@ -12,34 +13,34 @@ namespace WpfCAcademy
     /// </summary>
     public partial class MainWindow : Window
     {
-        cards Deck;
+        BridgeDeck Deck;
         Boolean EnableAdvancedShuffle = false;
         public MainWindow()
         {
             InitializeComponent();
-            this.Deck = new cards();
+            Deck = new BridgeDeck();
         }
 
         private void shuffle_Click(object sender, RoutedEventArgs e)
         {
             var players = 4;
             var cardsPerPlayer = 13;
-            Dictionary<int, List<card>> data = new Dictionary<int, List<card>>();
+            //Dictionary<int, List<card>> data = new Dictionary<int, List<card>>();
             Deck.Clear();
-            this.Deck.createDefaultDeck();
-            if (this.EnableAdvancedShuffle)
+            Deck.createDefaultDeck();
+            if (EnableAdvancedShuffle)
             {
-                this.Deck.shuffleAlternative();
+                Deck.shuffleAlternative();
             }
             else
             {
-                this.Deck.shuffle();
+                Deck.shuffle();
             }
-            data = this.Deck.deal(players, cardsPerPlayer);
-            southText.Text = this.Deck.ConverToString(data.ElementAt(0).Value);
-            westText.Text  = this.Deck.ConverToString(data.ElementAt(1).Value);
-            northText.Text = this.Deck.ConverToString(data.ElementAt(2).Value);
-            eastText.Text  = this.Deck.ConverToString(data.ElementAt(3).Value);
+            Deck.AddHands(Deck.deal(players, cardsPerPlayer));
+            southText.Text = Deck.ConverToString(Deck.Hands.ElementAt(0).Hand);
+            westText.Text  = Deck.ConverToString(Deck.Hands.ElementAt(1).Hand);
+            northText.Text = Deck.ConverToString(Deck.Hands.ElementAt(2).Hand);
+            eastText.Text  = Deck.ConverToString(Deck.Hands.ElementAt(3).Hand);
         }
 
         private void advanceShuffle_Checked(object sender, RoutedEventArgs e)

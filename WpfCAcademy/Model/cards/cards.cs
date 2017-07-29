@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using WpfCAcademy.Factory;
@@ -10,7 +11,7 @@ namespace WpfCAcademy.Model.cards
     {
         enum special : Byte { none = 0, joker }
         static Random r = new Random();
-        List<card> Deck = new List<card>();
+        protected List<card> Deck = new List<card>();
         public void addCard(card Card)
         {
             Deck.Insert(Deck.Count, Card);
@@ -40,7 +41,6 @@ namespace WpfCAcademy.Model.cards
 
         public List<card> shuffleAlternative()
         {
-            var newDeck = new List<card>();
             var deckCount = Deck.Count;
             var shuffleinnerCounter = r.Next(deckCount);
             for (int i = 0; i < shuffleinnerCounter; i++)
@@ -51,23 +51,29 @@ namespace WpfCAcademy.Model.cards
                     for (int j = 0; j < r.Next(deckCount / 10); j++)
                     {
                         cardSwitchCounter++;
-                        int k = r.Next(deckCount);
+                        int k = r.Next(deckCount-1);
                         switchCards(ref Deck, j, k);
                     }
                 } while (2 * Deck.Count > cardSwitchCounter);
-                Deck = newDeck;
             }
-            return newDeck;
+            return Deck;
         }
         private void switchCards(ref List<card> deck, int cardIndexFrom, int cardIndexTo)
         {
             int deckCount = deck.Count;
-            card tempn = Deck.ElementAt(cardIndexFrom);
-            Deck.RemoveAt(cardIndexFrom);
-            card tempk = Deck.ElementAt(cardIndexTo);
-            Deck.RemoveAt(cardIndexTo);
-            Deck.Insert(deckCount - 2, tempk);
-            Deck.Insert(deckCount - 1, tempn);
+            try
+            {
+                card tempn = Deck.ElementAt(cardIndexFrom);
+                Deck.RemoveAt(cardIndexFrom);
+                card tempk = Deck.ElementAt(cardIndexTo);
+                Deck.RemoveAt(cardIndexTo);
+                Deck.Insert(deckCount - 2, tempk);
+                Deck.Insert(deckCount - 1, tempn);
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
         }
         public List<card> shuffle()
         {
