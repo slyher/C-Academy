@@ -1,4 +1,4 @@
-https://youtu.be/eWwkIKT9z5A
+https://youtu.be/HMU7IYwPmP8
 * WPF application (button, some text fields)
 * enums, dictionaries, overiding toString()
 * Shuffling algoritms - at least one
