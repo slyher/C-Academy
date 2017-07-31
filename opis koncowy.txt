@@ -1,6 +1,22 @@
-* WPF application (buttons, some text fields)
+https://youtu.be/HMU7IYwPmP8
+* WPF application (button, some text fields)
 * enums, dictionaries, overiding toString()
 * Shuffling algoritms - at least one
 * Sorting hand by suite and value
 * Counting HCP points for each hand
-* Predicting opening bid for one player Strong pass convencion
+* Predicting opening bid for one player "Strong pass" convencion
+* ussing command design pattern to extend first bid functionality
+feature posibilities: 
+adding more bidding conventions;
+Choosing them in selectbox(combobox);
+getting the bid in separate textbox with explanation why this bid was chosen; 
+adding colors to suits;
+ConverToString fuction from BridgeDeck should be moved to BridgeHand
+Things not covered in the video:
+Class dependency: 
+card has a Suit and a Mark. cards have a list card objects (all in model directory)
+Suit has a factory for its constructor- to iterate all Suits
+in Bridge you have hand - hand consists of list of card objects;
+
+to get first bid for a hand You need to have an apropriate class in Factory directory:
+for convencion "Strong Pass" it is "StrongPassFirstBidclass" adding the apropriate name to the Conventions enum
